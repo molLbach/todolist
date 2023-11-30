@@ -1,7 +1,10 @@
+import {Task} from "./Tasks";
+
 class Project{
     constructor(title,desc){
             this.title = title;
             this.desc = desc;
+            this.tasks = [];
             }
 }
 let projectsArray = [];
@@ -25,5 +28,11 @@ function populateProject(){
     projectsdiv.appendChild(proji);
 
 }
+
+function addTasktoProject(taskTitle,taskDate,taskPriority,TaskDesc){
+    const newtask = new Task(taskTitle,taskDate,taskPriority,TaskDesc);
+    latestproject.tasks.push(newtask);
+}
+
 
 export {ajouterproject, projectsArray,latestproject,populateProject};

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todolist+</title>
     <link rel="stylesheet" href="styles.css">
     
 </head>
@@ -21,9 +21,9 @@
                 <h2>New Project</h2>
                 <button class="cancelproject">X</button>
                 </div>
-                <input type="text" placeholder="Project name" id="projectname">
+                <input type="text" placeholder="Project name" id="projectname" required>
                 <hr>
-                <input type="text" placeholder="Project description" id="projectdesc">
+                <input type="text" placeholder="Project description" id="projectdesc" required>
                 <hr>
                 <button class="btnsubmit" type="submit">Add</button>
             </dialog>
@@ -34,6 +34,22 @@
         <div class="taskdiv">
             <div class="buttondiv">
                 <button class="addtask">+add Tasks</button>
+                <dialog class="taskmodal">
+                 <input id="taskdesc" type="text" placeholder="Task info" required>
+                 <input type="date" id="date">
+                 <br>
+                 <div class="flexdiv">
+                    <select name="priority" id="priority">
+                        <option value="default">Select Priority</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                     </select>
+                     <button id="taskadd">+</button>
+                     <button id="taskcancel">X</button>
+                 </div>
+                 
+                </dialog>
             </div>
             <div class="refreshdiv"></div>
         </div>

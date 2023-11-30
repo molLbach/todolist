@@ -1,4 +1,4 @@
-/* class AddTask{
+class Task{
     constructor(title,date,priority,desc){
         this.title = title;
         this.date = date;
@@ -27,7 +27,8 @@
         this.priority === false ? (this.priority = true) : (this.priority = false);
         return this;
       }
-    }
+}
+
+export{Task};
     
 
- */

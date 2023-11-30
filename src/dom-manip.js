@@ -21,6 +21,14 @@ const cancelproject = document.querySelector(".cancelproject");
 const btnsubmit = document.querySelector(".btnsubmit");
 const projectname = document.querySelector("#projectname");
 const projectdesc = document.querySelector("#projectdesc");
+const taskbutton = document.querySelector(".addtask");
+const taskmodal = document.querySelector(".taskmodal");
+const taskcancel = document.querySelector("#taskcancel");
+const taskdesc = document.querySelector("#taskdesc");
+const priority = document.querySelector("#priority");
+const date = document.querySelector("#date");
+const taskadd = document.querySelector("#taskadd")
+
 addproject.addEventListener("click",()=>{
     modal.showModal();
 })    
@@ -37,11 +45,31 @@ projectname.value = "";
 modal.close();
 ajouterproject(projectname1,projectdesc1);
 populateProject();
+
+});
+
+
+taskbutton.addEventListener("click",()=>{
+    taskmodal.showModal();
+
+});
+taskcancel.addEventListener("click",()=>{
+    taskmodal.close();
+    taskdesc.value = "";
+    priority.value = "default";
+    date.value = ""; 
+})
+
+taskadd.addEventListener("click",()=>{
+    
+    taskmodal.close();
+    taskdesc.value = "";
+    priority.value = "default";
+    date.value = "";
+     
+
 })
 
 
-
 }
-
-
 export {handleButtonClick};

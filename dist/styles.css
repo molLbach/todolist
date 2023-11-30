@@ -115,3 +115,32 @@ dialog::backdrop{
   width: 100%;
   background-color: green;
 }
+.taskmodal{
+  position: absolute;
+  top: 42%;
+  left: 40%;
+}
+.flexdiv{
+  display: flex;
+  justify-content: space-between;
+}
+#taskadd{
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  margin-top: 14px;
+  margin-left: 140px;
+  border-radius: 4px;
+}
+#taskcancel{
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  margin-top: 14px;
+  margin-right: 4px;
+  border-radius: 5px;
+}
+#priority{
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
