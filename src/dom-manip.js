@@ -1,4 +1,4 @@
-import { ajouterproject, projectsArray } from "./projects";
+import { ajouterproject, projectsArray ,latestproject,populateProject} from "./projects";
 
 
 function displayAlltasks(){
@@ -36,8 +36,7 @@ projectdesc.value = "";
 projectname.value = "";
 modal.close();
 ajouterproject(projectname1,projectdesc1);
-console.log(projectsArray);
-
+populateProject();
 })
 
 

@@ -30,7 +30,7 @@ border-bottom: solid 5px black;
   display: flex;
   align-items: center;
   flex-direction: column;}  
-.refreshdiv{
+.taskdiv{
   height: 100%;
   width: 72%;
   background-color: green;
@@ -45,7 +45,7 @@ border-bottom: solid 5px black;
   margin-top: 5px;
   text-decoration: underline;
 }
-.refreshdiv{
+.taskdiv{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -91,4 +91,27 @@ margin-bottom: 20px;
 }
 dialog::backdrop{
   background-color: rgba(128, 128, 128, 0.5);
+}
+.projetstyle{
+  height: 100px;
+  width: 450px;
+  background-color: beige;
+  border-radius: 6px;
+  padding-left: 14px;
+  margin-top: 16px;
+  border: solid 4px black;
+
+}
+.projetstyle h1{
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+.projetstyle p{
+  font-size: 14px;
+}
+.refreshdiv{
+  height: 100%;
+  width: 100%;
+  background-color: green;
 }
