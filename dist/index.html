@@ -16,8 +16,21 @@
     <div class="countainer">
         <div class="projectsdiv">
             <button class="addproject">+Add Project</button>
+            <dialog class="modal">
+                <div class="topbar">
+                <h2>New Project</h2>
+                <button class="cancelproject">X</button>
+                </div>
+                <input type="text" placeholder="Project name" id="projectname">
+                <hr>
+                <input type="text" placeholder="Project description" id="projectdesc">
+                <hr>
+                <button class="btnsubmit" type="submit">Add</button>
+            </dialog>
             <h1>Projects:</h1>
+            
         </div>
+        
         <div class="refreshdiv">
             <button class="addtask">+add Tasks</button>
         </div>
