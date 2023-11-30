@@ -1,4 +1,4 @@
-import { ajouterproject, projectsArray ,latestproject,populateProject} from "./projects";
+import { ajouterproject, projectsArray ,latestproject,populateProject,addTasktoProject} from "./projects";
 
 
 function displayAlltasks(){
@@ -27,7 +27,8 @@ const taskcancel = document.querySelector("#taskcancel");
 const taskdesc = document.querySelector("#taskdesc");
 const priority = document.querySelector("#priority");
 const date = document.querySelector("#date");
-const taskadd = document.querySelector("#taskadd")
+const taskadd = document.querySelector("#taskadd");
+
 
 addproject.addEventListener("click",()=>{
     modal.showModal();
@@ -45,7 +46,7 @@ projectname.value = "";
 modal.close();
 ajouterproject(projectname1,projectdesc1);
 populateProject();
-
+console.log(latestproject.id);
 });
 
 
@@ -63,10 +64,12 @@ taskcancel.addEventListener("click",()=>{
 taskadd.addEventListener("click",()=>{
     
     taskmodal.close();
-    taskdesc.value = "";
-    priority.value = "default";
-    date.value = "";
-     
+    let taskdesc1 = taskdesc.value;
+    let date1 = date.value;
+    let priority1 = priority.value;
+    addTasktoProject(taskdesc1,date1,priority1);
+    
+
 
 })
 
