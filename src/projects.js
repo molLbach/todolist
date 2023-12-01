@@ -1,18 +1,13 @@
 import {Task} from "./Tasks";
 
 class Project{
-    static id=1;
     constructor(title,desc){
             this.title = title;
             this.desc = desc;
             this.tasks = [];
-            this.id = Project.id++;
+            this.id = null;
         }
                    
-     /* addTask(task) {
-     this.tasks.push(task);
-      } */
-            
 
 }
 let projectsArray = [];
@@ -33,19 +28,34 @@ function populateProject(){
     let descri = document.createElement("p");
     descri.textContent = `${latestproject.desc}`;
     proji.appendChild(descri);
-    projectsdiv.appendChild(proji);
-
-    
-
+    proji.addEventListener("click", () => {
+      const allProjects = document.querySelectorAll('.projetstyle');
+      allProjects.forEach(project => {
+          project.removeAttribute("id");
+      });
+      proji.id = "id";
+      console.log(proji);
+  });
+          
+   projectsdiv.appendChild(proji);
+        
 }
 
-function addTasktoProject(taskTitle, taskDate, taskPriority, project) {
-    const targetProject = project ;
-      const newtask = new Task(taskTitle, taskDate, taskPriority);
-      targetProject.tasks.push(newtask);
+function getProjectById(projectsArray) {
+  let projectWithId = projectsArray.find(project => project.id === "id");
+  return projectWithId;
+}
+
+  
+
+function addTasktoProject(taskTitle, taskDate, taskPriority, projectId) {
+    const newtask = new Task(taskTitle, taskDate, taskPriority);
+      projectId.tasks.push(newtask);}
+        
+      
     
-    }
+    
     
         
 
-export {ajouterproject, projectsArray,latestproject,populateProject,addTasktoProject};
+export {ajouterproject, projectsArray,latestproject,populateProject,addTasktoProject,getProjectById};

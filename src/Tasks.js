@@ -1,9 +1,8 @@
 class Task{
-    constructor(title,date,priority,desc){
+    constructor(title,date,priority){
         this.title = title;
         this.date = date;
         this.priority = priority;
-        this.desc = desc;
         this.completed = false;
     }
     toggleCompleted() {
