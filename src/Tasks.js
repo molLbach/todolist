@@ -1,5 +1,5 @@
-class Task{
-    constructor(title,date,priority){
+class Task{  
+  constructor(title,date,priority){
         this.title = title;
         this.date = date;
         this.priority = priority;
@@ -9,7 +9,6 @@ class Task{
         this.completed === false
           ? (this.completed = true)
           : (this.completed = false);
-    
         if (this.completed === true)
           this.completedDate = new Date().toLocaleString(navigator.languages[0], {
             year: "numeric",

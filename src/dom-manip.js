@@ -1,5 +1,5 @@
 import { Task } from "./Tasks";
-import { ajouterproject, projectsArray ,latestproject,populateProject,addTasktoProject,getProjectById} from "./projects";
+import { ajouterproject, projectsArray ,latestproject,getSelectedProjectId,addTasktoProject} from "./projects";
 
 
 function displayAlltasks(){
@@ -46,7 +46,7 @@ projectdesc.value = "";
 projectname.value = "";
 modal.close();
 ajouterproject(projectname1,projectdesc1);
-populateProject();
+console.log(projectsArray);
 });
 
 //TASKS---------------------------------------------------
@@ -61,18 +61,20 @@ taskcancel.addEventListener("click",()=>{
     date.value = ""; 
 })
 
-taskadd.addEventListener("click",()=>{
-    
+taskadd.addEventListener("click", () => {
+    const selectedProjectElement = document.querySelector('.projetstyle.selected');
+    const projectId = selectedProjectElement.getAttribute('project-id');
+    const selectedProjectInstance = getSelectedProjectId(parseInt(projectId));
     let taskdesc1 = taskdesc.value;
     let date1 = date.value;
     let priority1 = priority.value;
-    addTasktoProject(taskdesc1,date1,priority1,getProjectById(projectsArray));
+    addTasktoProject(taskdesc1, date1,priority1, selectedProjectInstance);
     console.log(projectsArray);
     taskmodal.close();
-
-})
-
-
+  });
+  
 
 }
-export {handleButtonClick};
+
+
+export {handleButtonClick}
