@@ -1,5 +1,7 @@
-class Task{
-    constructor(title,date,priority){
+import { populateProject,getSelectedProjectId } from "./projects";
+
+class Task{  
+  constructor(title,date,priority){
         this.title = title;
         this.date = date;
         this.priority = priority;
@@ -9,7 +11,6 @@ class Task{
         this.completed === false
           ? (this.completed = true)
           : (this.completed = false);
-    
         if (this.completed === true)
           this.completedDate = new Date().toLocaleString(navigator.languages[0], {
             year: "numeric",
@@ -28,6 +29,27 @@ class Task{
       }
 }
 
-export{Task};
-    
 
+function populateTask(projectInstance) {
+  let latesttask = projectInstance.tasks.length-1;
+  const refreshdiv = document.querySelector(".refreshdiv");
+  let task = document.createElement("div");
+  task.classList.add("taskstyle");
+
+  let taskdesc = document.createElement("h1");
+  taskdesc.textContent = projectInstance.tasks[latesttask].title; 
+
+  let taskdate = document.createElement("p"); 
+  taskdate.textContent = projectInstance.tasks[latesttask].date; 
+
+  let taskPriority = document.createElement("p"); 
+  taskPriority.textContent = projectInstance.tasks[latesttask].priority; 
+
+  task.appendChild(taskdesc);
+  task.appendChild(taskdate);
+  task.appendChild(taskPriority);
+
+  refreshdiv.appendChild(task);
+}
+
+export{Task,populateTask};

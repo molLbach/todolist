@@ -1,9 +1,5 @@
 import { handleButtonClick } from "./dom-manip";
 handleButtonClick();
-/* import {addTask} from "./Tasks.js";
 
-let todo1 = new addTask("asdasd","asdasd","asdasd","asdd");
-console.log(todo1);
- */
 
 
