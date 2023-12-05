@@ -34,38 +34,41 @@ function populateProject() {
     descri.textContent = `${latestproject.desc}`;
     proji.appendChild(descri);
     proji.addEventListener("click", () => {
-        const allProjects = document.querySelectorAll('.projetstyle');
-        allProjects.forEach(project => {
-            project.classList.remove('selected');
-        });
-
-        proji.classList.add('selected');
+      const allProjects = document.querySelectorAll('.projetstyle');
+      allProjects.forEach(project => {
+        project.classList.remove("selected");
     });
-
-    projectsdiv.appendChild(proji);
+    proji.classList.add("selected");
+      console.log(proji);
+  });
+          
+   projectsdiv.appendChild(proji);
+        
 }
-
-
 
 function getSelectedProjectId(projectId) {
-    const projectInstance = projectsArray.find(function(project) {
-        return project.id === projectId;
+    const projectInstance = projectsArray.find(function (project) {
+      return project.id === projectId;
     });
-
+  
     return projectInstance;
-}
+  }
+  
+
+
+  
+  
 
 
   
 
-function addTasktoProject(taskTitle, taskDate, taskPriority, projectinstance) {
-
+function addTasktoProject(taskTitle, taskDate, taskPriority, projectId) {
+    const newtask = new Task(taskTitle, taskDate, taskPriority);
+      projectId.tasks.push(newtask);}
+        
+      
     
-      const newTask = new Task(taskTitle, taskDate, taskPriority);
-
-        projectinstance.tasks.push(newTask);
-    }
-
+    
     
         
 

@@ -1,6 +1,5 @@
-
-import { Task,populateTask } from "./Tasks";
-import { ajouterproject, projectsArray ,latestproject,getSelectedProjectId,addTasktoProject} from "./projects";
+import { Task ,populateTask} from "./Tasks";
+import { ajouterproject, projectsArray ,latestproject,populateProject,addTasktoProject,getSelectedProjectId} from "./projects";
 
 
 function displayAlltasks(){
@@ -76,20 +75,10 @@ taskadd.addEventListener("click", () => {
     date.value =""
     priority.value = "";
     taskmodal.close();
-  });
 
-}
+})
 
-/* function updateProject (selectedProjectInstance){
-    const refreshdiv = document.querySelector(".refreshdiv");
-    refreshdiv.innerHTML = "";
-    for(let i=0;selectedProjectInstance.tasks[i];i<i++){
-        populateTask(selectedProjectInstance.tasks[i])
-    }
 
 
 }
-
- */
-
-export {handleButtonClick}
+export {handleButtonClick};
